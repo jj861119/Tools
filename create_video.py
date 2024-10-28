@@ -3,7 +3,7 @@ import glob
 import os
  
 img_array = []
-for filename in sorted(glob.glob('D:/Github/DDRNet.pytorch/test_results2/*.png'), 
+for filename in sorted(glob.glob('D:/yuting/output/20241004_fog1/*.jpg'), 
                         key=os.path.getmtime):
     img = cv2.imread(filename)
     height, width, layers = img.shape
@@ -11,7 +11,7 @@ for filename in sorted(glob.glob('D:/Github/DDRNet.pytorch/test_results2/*.png')
     img_array.append(img)
  
  
-out = cv2.VideoWriter('CCD2_07_cut_result.avi',cv2.VideoWriter_fourcc(*'DIVX'), 30, size)
+out = cv2.VideoWriter('output.avi',cv2.VideoWriter_fourcc(*'DIVX'), 5, size)
  
 for i in range(len(img_array)):
     out.write(img_array[i])
